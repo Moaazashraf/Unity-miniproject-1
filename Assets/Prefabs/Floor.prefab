@@ -141,7 +141,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 10, y: 30, z: 10}
   m_Center: {x: 0, y: 0, z: 5}
 --- !u!114 &8872273979005655874
 MonoBehaviour:
@@ -155,12 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d11d507587021543bd468bcf3fd999e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   obstacle1: {fileID: 4977676903955767491, guid: 0f650183cc293ac40b49b8ce1fe2f2c0, type: 3}
   obstacle2: {fileID: 319529343312771647, guid: 30fe1fc914ca36e4ba4056e074126765, type: 3}
   obstacle3: {fileID: 5112524599665864587, guid: bef45ff3cc2924d4680e0e7ec2c852dc, type: 3}
   YellowCoin: {fileID: 9104905089180199891, guid: 5b688912016bab5498983a195b349367, type: 3}
   RedCoin: {fileID: 7958759622883575873, guid: 0f45470506df16d499795a662aa4541f, type: 3}
   BlueCoin: {fileID: 3970963442109980939, guid: 8fd0a94ed2195d74caad5fb03b9825da, type: 3}
+  HealthCube: {fileID: 8685658527247183283, guid: 394292a0d0b29a543a3252c511463fb7, type: 3}
+  YellowCoin1: {fileID: 9104905089180199891, guid: ecb493dc1d578ff42970305f7395f3f1, type: 3}
+  RedCoin1: {fileID: 7958759622883575873, guid: bf7d132ad75a05d4aafeb8588740939c, type: 3}
+  BlueCoin1: {fileID: 3970963442109980939, guid: e38a78aa75d7cfe4c883c129baab3731, type: 3}
+  HealthCube1: {fileID: 8685658527247183283, guid: ca3339c82e4057c43b2ca07f3e29b98f, type: 3}
 --- !u!1 &2281326773341185151
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,10 @@ public class PlayerHealth : MonoBehaviour
         {
             fillImage.color = Color.red;
         }
+        else
+        {
+            fillImage.color = Color.green;
+        }
         float fillValue = (gameManager.currentHealth/ gameManager.maxHealth);
         slider.value = fillValue;
     }

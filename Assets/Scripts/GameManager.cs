@@ -8,10 +8,18 @@ public class GameManager : MonoBehaviour
     public float currentHealth = 3.0f;
     public float maxHealth = 3.0f;
     public int score;
+    int points = 0;
     public Text scoreText;
     public static GameManager inst;
+    public Movement movement;
     public void IncrementScore()
     {
+        points+=1;
+        if ((points % 5 == 0) & (points > 0.0) )
+        {
+            Debug.Log(movement.speed);
+            movement.speed = movement.speed + 2.0f;
+        }
         score+=10;
         scoreText.text = "Score: " + score;
     }
@@ -24,7 +32,10 @@ public class GameManager : MonoBehaviour
 
      public void IncrementHealth()
     {
-        currentHealth++;
+        if ( currentHealth < 3 )
+        {
+            currentHealth++;
+        }
     }
 
     public void DecrementHealth()
