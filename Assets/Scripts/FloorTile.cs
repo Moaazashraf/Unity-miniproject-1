@@ -83,8 +83,10 @@ public class FloorTile : MonoBehaviour
         
         GameObject[] Collictors = {RedCoin, YellowCoin, BlueCoin, HealthCube };
         int collictorsIndex = Random.Range(0, 4);
-        GameObject temp = Instantiate(Collictors[collictorsIndex], GetRondomPosition(GetComponent<Collider>()), Quaternion.identity, transform);
-        GameObject tempf = Instantiate(Collictors[collictorsIndex], GetRondomPositionf(GetComponent<Collider>()), Quaternion.identity, transform);
+        GameObject temp = Instantiate(Collictors[collictorsIndex], transform);
+        temp.transform.position = GetRondomPosition(GetComponent<Collider>());
+        GameObject tempf = Instantiate(Collictors[collictorsIndex], transform);
+        tempf.transform.position = GetRondomPositionf(GetComponent<Collider>());
 
     }
 

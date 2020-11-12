@@ -2,7 +2,7 @@
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 7;
     public Rigidbody rb;
     float horizontalInput;
     int currentScore;
@@ -14,11 +14,11 @@ public class Movement : MonoBehaviour
     { 
         if (GameManager.inst.flipped)
         {
-            rb.AddForce(new Vector3(0, 10 * speed, 0), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(0, 10 * 7, 0), ForceMode.Acceleration);
         }
         else
         {
-            rb.AddForce(new Vector3(0, -10 * speed, 0), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(0, -10 * 7, 0), ForceMode.Acceleration);
         }
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
         Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.inst.flipped =  !GameManager.inst.flipped;
+
         }
         horizontalInput = Input.GetAxis("Horizontal");
         /*Vector3 forwardMove = transform.forward * speed * Time.deltaTime;*/
