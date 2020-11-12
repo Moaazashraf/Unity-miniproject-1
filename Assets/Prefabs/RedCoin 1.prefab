@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7958759622883575878}
   - component: {fileID: 8570489207817207608}
   m_Layer: 0
-  m_Name: RedCoin
+  m_Name: RedCoin 1
   m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MeshRenderer:
   m_GameObject: {fileID: 7958759622883575873}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1

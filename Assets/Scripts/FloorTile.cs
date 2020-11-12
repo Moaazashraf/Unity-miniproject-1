@@ -15,10 +15,6 @@ public class FloorTile : MonoBehaviour
     public GameObject RedCoin;
     public GameObject BlueCoin;
     public GameObject HealthCube;
-    public GameObject YellowCoin1;
-    public GameObject RedCoin1;
-    public GameObject BlueCoin1;
-    public GameObject HealthCube1;
 
 
 
@@ -27,18 +23,13 @@ public class FloorTile : MonoBehaviour
     {
         groundSpawner = GameObject.FindObjectOfType<FloorSpawner>();
         SpawnObstacle();
-        SpawnOCoin();
-        SpawnOCoin1();
-        timer += Time.deltaTime;
-        // if (timer >= 5.0f)//change the float value here to change how long it takes to switch.
-        // {
-        SpawnOHealthCube(); 
-        SpawnOHealthCube1(); 
-        //     timer = 0;
-        // }
+        SpawnCollictor();
+        SpawnObstaclef();
+
+
     }
 
-    
+
     void OnTriggerExit (Collider other)
     {
         groundSpawner.SpawnTile();
@@ -66,35 +57,35 @@ public class FloorTile : MonoBehaviour
         }
     }
 
-    void SpawnOCoin()
+    void SpawnObstaclef()
+    {
+        int obstacleSpawnIndex = Random.Range(9, 15);
+        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+        if (obstacleSpawnIndex == 14)
+        {
+            Instantiate(obstacle3, spawnPoint.position, Quaternion.identity, transform);
+        }
+        else
+        {
+            if (obstacleSpawnIndex == 13 || obstacleSpawnIndex == 12)
+            {
+                Instantiate(obstacle2, spawnPoint.position, Quaternion.identity, transform);
+            }
+            else
+            {
+                Instantiate(obstacle1, spawnPoint.position, Quaternion.identity, transform);
+            }
+        }
+    }
+
+    void SpawnCollictor()
     {
         
-        GameObject[] coins = {RedCoin, YellowCoin, BlueCoin};
-        int coinIndex = Random.Range(0, 3);
-        GameObject temp = Instantiate(coins[coinIndex], transform);
-        temp.transform.position = GetRondomPosition(GetComponent<Collider>());
-            
-    }
+        GameObject[] Collictors = {RedCoin, YellowCoin, BlueCoin, HealthCube };
+        int collictorsIndex = Random.Range(0, 4);
+        GameObject temp = Instantiate(Collictors[collictorsIndex], GetRondomPosition(GetComponent<Collider>()), Quaternion.identity, transform);
+        GameObject tempf = Instantiate(Collictors[collictorsIndex], GetRondomPositionf(GetComponent<Collider>()), Quaternion.identity, transform);
 
-    void SpawnOCoin1()
-    {
-        
-        GameObject[] coins = {RedCoin1, YellowCoin1, BlueCoin1};
-        int coinIndex = Random.Range(0, 3);
-        GameObject temp = Instantiate(coins[coinIndex], transform);
-        temp.transform.position = GetRondomPosition1(GetComponent<Collider>());
-    }
-
-    void SpawnOHealthCube()
-    {
-        GameObject temp = Instantiate(HealthCube, transform);
-        temp.transform.position = GetRondomPosition(GetComponent<Collider>());
-    }
-
-    void SpawnOHealthCube1()
-    {
-        GameObject temp = Instantiate(HealthCube1, transform);
-        temp.transform.position = GetRondomPosition1(GetComponent<Collider>());
     }
 
     Vector3 GetRondomPosition(Collider collider)
@@ -106,13 +97,18 @@ public class FloorTile : MonoBehaviour
         point.y = 1;
         return point;
     }
-     Vector3 GetRondomPosition1(Collider collider)
+     Vector3 GetRondomPositionf(Collider collider)
     {
         Vector3 point = new Vector3(
             Random.Range(collider.bounds.min.x, collider.bounds.max.x),
             Random.Range(collider.bounds.min.y, collider.bounds.max.y),
             Random.Range(collider.bounds.min.z, collider.bounds.max.z));
-        point.y = 6;
+        point.y = 4;
         return point;
+    }
+
+    void Update()
+    {
+      
     }
 }

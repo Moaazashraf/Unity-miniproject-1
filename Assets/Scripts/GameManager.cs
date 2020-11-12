@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public static GameManager inst;
     public Movement movement;
+    public bool flipped;
     public void IncrementScore()
     {
         points+=1;

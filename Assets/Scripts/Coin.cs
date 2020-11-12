@@ -24,11 +24,25 @@ public class Coin : MonoBehaviour
 
             if(coinRenderer.material.color == playerRenderer.material.color)
             {
-                GameManager.inst.IncrementScore();
+                if (GameManager.inst.flipped)
+                {
+                    GameManager.inst.DecrementScore();
+                }
+                else
+                {
+                    GameManager.inst.IncrementScore();
+                }
             }
             else
             {
-                GameManager.inst.DecrementScore();
+                if (GameManager.inst.flipped)
+                {
+                    GameManager.inst.IncrementScore();
+                }
+                else
+                {
+                    GameManager.inst.DecrementScore();
+                }
             }
         }
 

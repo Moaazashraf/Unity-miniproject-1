@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 89808644768169158}
   - component: {fileID: 545120841711708076}
   m_Layer: 0
-  m_Name: YellowCoin
+  m_Name: YellowCoin 1
   m_TagString: Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MeshRenderer:
   m_GameObject: {fileID: 9104905089180199891}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
